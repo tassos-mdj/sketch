@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+button{
+    margin: 20px 0;
+}
+
 .linecontainer {
     display: flex;
     flex-flow: row;
