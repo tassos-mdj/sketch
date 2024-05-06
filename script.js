@@ -20,7 +20,13 @@ for (let j = 1; j <= side; j++){
 const innerDivs = document.querySelectorAll(".innerdiv");
 innerDivs.forEach( (element) => {
     element.addEventListener("mouseenter", () => {
-        element.style.backgroundColor = "orchid";
+        function random_rgba() {
+            let o = Math.round, r = Math.random, s = 255;
+            return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+        }
+        
+        let color = random_rgba();
+        element.style.backgroundColor = color;
     });
 });
 }
@@ -29,8 +35,14 @@ const btn = document.querySelector("button");
 
 btn.addEventListener("click", () => {
     container.textContent = '';
-    let userSelection = prompt("Enter size");
+    let userSelection = prompt("Enter size from 1 to 100");
+    if (userSelection > 100 || userSelection < 1) {
+        alert("Out of range");
+        createGrid(16);
+        }
+    else{
     createGrid(userSelection);
+    }
 });
 
 
