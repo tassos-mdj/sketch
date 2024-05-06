@@ -1,0 +1,8 @@
+.body{
+    box-sizing: border-box;
+}
+
+.linecontainer {
+    display: flex;
+    flex-flow: row;
+}
